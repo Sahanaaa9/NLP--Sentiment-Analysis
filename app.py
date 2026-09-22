@@ -56,9 +56,6 @@ CSS = """
   flex-wrap: wrap; margin-bottom: 1.4rem; }
 .sa-title { font-size: 2.1rem; font-weight: 800; color: #1e1b4b; letter-spacing: -0.02em; line-height: 1.2; }
 .sa-subtitle { color: #64748b; font-size: 1.05rem; margin-top: 4px; }
-.sa-badge { display: inline-flex; align-items: center; gap: 8px; background: #eef2ff; color: #4338ca;
-  border: 1px solid #e0e7ff; padding: 7px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
-.sa-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 3px #dcfce7; }
 
 /* Cards */
 [data-testid="stVerticalBlock"]:has(> [data-testid="stElementContainer"] .sa-card-marker),
@@ -250,7 +247,6 @@ html(f"""
     <div class="sa-title">💬 Sentiment Analysis</div>
     <div class="sa-subtitle">Understand customer opinions instantly with machine learning.</div>
     </div>
-    <div class="sa-badge"><span class="sa-dot"></span>Model: {model_name}</div>
     </div>
 """)
 
