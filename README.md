@@ -135,6 +135,7 @@ sentiment-analysis/
 ├── sentiment_model.pkl                      # trained Logistic Regression model
 ├── tfidf_vectorizer.pkl                     # fitted TF-IDF vectorizer
 ├── requirements.txt                         # packages needed to run the app
+├── .streamlit/config.toml                   # app theme colour
 ├── .gitignore
 └── README.md
 ```
