@@ -119,14 +119,6 @@ CSS = """
 .sa-metric-value.sa-small { font-size: 1.15rem; padding-top: 8px; }
 .sa-note { color: #64748b; font-size: 0.85rem; margin-top: 12px; }
 
-/* How it works */
-.sa-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
-.sa-step { background: #ffffff; border: 1px solid #e8eaf3; border-radius: 16px; padding: 18px 20px; }
-.sa-step-num { font-size: 0.85rem; font-weight: 800; color: #6366f1; background: #eef2ff;
-  display: inline-block; padding: 3px 10px; border-radius: 8px; }
-.sa-step-title { font-weight: 700; color: #1e1b4b; margin-top: 10px; }
-.sa-step-text { color: #64748b; font-size: 0.88rem; margin-top: 4px; line-height: 1.5; }
-
 /* Sidebar */
 [data-testid="stSidebar"] { background: #ffffff; border-right: 1px solid #e8eaf3; }
 .sa-side-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: #6366f1;
@@ -367,22 +359,5 @@ html(f"""
     </div>
 """)
 
-# ---------- 7. How it works ----------
-html('<div class="sa-section sa-font"><div class="sa-eyebrow">Pipeline</div>'
-     '<div class="sa-section-title">How It Works</div></div>')
-
-html(f"""
-    <div class="sa-steps sa-font">
-    <div class="sa-step"><span class="sa-step-num">01</span><div class="sa-step-title">Clean Text</div>
-    <div class="sa-step-text">Lowercase, remove punctuation, numbers and extra spaces.</div></div>
-    <div class="sa-step"><span class="sa-step-num">02</span><div class="sa-step-title">TF-IDF Transformation</div>
-    <div class="sa-step-text">Convert the cleaned text into numeric features (5,000 words, English stop words removed).</div></div>
-    <div class="sa-step"><span class="sa-step-num">03</span><div class="sa-step-title">Machine Learning Model</div>
-    <div class="sa-step-text">The trained {model_name} model scores the features.</div></div>
-    <div class="sa-step"><span class="sa-step-num">04</span><div class="sa-step-title">Sentiment Prediction</div>
-    <div class="sa-step-text">The review is labelled Positive, Neutral or Negative.</div></div>
-    </div>
-""")
-
-# ---------- 9. Footer ----------
+# ---------- Footer ----------
 html('<div class="sa-footer sa-font">Built with Python • Scikit-learn • TF-IDF • Streamlit</div>')
