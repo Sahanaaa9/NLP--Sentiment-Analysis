@@ -234,7 +234,7 @@ with st.sidebar:
     """)
 
 # ---------- 1. Header ----------
-html(f"""
+html("""
     <div class="sa-header sa-font">
     <div>
     <div class="sa-title">💬 Sentiment Analysis</div>
