@@ -110,11 +110,6 @@ CSS = """
   animation: sa-fade-up 0.35s ease-out; }
 .sa-stat-label { color: #64748b; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
 .sa-stat-value { color: #1e1b4b; font-size: 1.35rem; font-weight: 700; margin-top: 4px; }
-.sa-metric { background: #ffffff; border: 1px solid #e8eaf3; border-radius: 16px; padding: 18px 20px;
-  box-shadow: 0 4px 18px rgba(30, 27, 75, 0.05); }
-.sa-metric-value { color: #1e1b4b; font-size: 1.7rem; font-weight: 800; margin-top: 6px; }
-.sa-metric-value.sa-small { font-size: 1.15rem; padding-top: 8px; }
-.sa-note { color: #64748b; font-size: 0.85rem; margin-top: 12px; }
 
 /* Sidebar */
 [data-testid="stSidebar"] { background: #ffffff; border-right: 1px solid #e8eaf3; }
@@ -333,25 +328,6 @@ if result and result["text"] == st.session_state.review:
         <div class="sa-stat-value" style="color:{style['color']}">{label}</div></div>
         </div>
     """)
-
-# ---------- 6. Model information ----------
-html('<div class="sa-section sa-font"><div class="sa-eyebrow">Model</div>'
-     '<div class="sa-section-title">Model Information</div></div>')
-
-metric_cards = f"""<div class="sa-metric"><div class="sa-stat-label">Model</div>
-    <div class="sa-metric-value sa-small">{model_name}</div></div>"""
-for name, value in (metrics or {}).items():
-    metric_cards += f"""<div class="sa-metric"><div class="sa-stat-label">{name}</div>
-        <div class="sa-metric-value">{value:.1%}</div></div>"""
-
-html(f"""
-    <div class="sa-font">
-    <div class="sa-stats">{metric_cards}</div>
-    <div class="sa-note">Evaluated on 288 test reviews (20% stratified split). Precision, recall and F1 are
-    weighted averages. Selected as the best of 4 models (Logistic Regression, Decision Tree, Random Forest,
-    KNN) by F1 score. Neutral reviews were rare in the training data, so Neutral is predicted less often.</div>
-    </div>
-""")
 
 # ---------- Footer ----------
 html('<div class="sa-footer sa-font">Built with Python • Scikit-learn • TF-IDF • Streamlit</div>')
