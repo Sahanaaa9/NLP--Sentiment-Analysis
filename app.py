@@ -227,8 +227,6 @@ with st.sidebar:
         <div class="sa-side-label" style="margin-top:4px">About the project</div>
         <div class="sa-side-text">Classifies customer reviews as Positive, Neutral or Negative using
         classic NLP and machine learning.</div>
-        <div class="sa-side-label">Model</div>
-        <div class="sa-side-text"><b>{model_name}</b></div>
         <div class="sa-side-label">Dataset</div>
         <div class="sa-side-text">1,440 smartphone customer reviews (title, rating, body).<br>
         Rating 1–2 → Negative · 3 → Neutral · 4–5 → Positive</div>
@@ -271,7 +269,7 @@ with st.container(border=True):
     )
 
     analyze_col, clear_col, _ = st.columns([2, 1, 3])
-    analyze_col.button("✨ Analyze Sentiment", type="primary", on_click=run_analysis)
+    analyze_col.button("Analyze Sentiment", type="primary", on_click=run_analysis)
     clear_col.button("Reset", on_click=clear_all)
 
     if st.session_state.notice:
